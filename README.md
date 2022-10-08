@@ -10,17 +10,33 @@
 npm install --save current-weather-widget
 ```
 
+| Variable Name             | Description                    |
+| ------------------------- | ------------------------------ |
+| `location` **\*required** | city name                      |
+| `tempType`                | metric or empty                |
+| `lang`                    | 2 Letter Language Codes(tr,en) |
+| `width` **\*required**    | auto or pixels (180px)         |
+| `apiKey` **\*required**   | openweathermap.org api key     |
+
 ## Usage
 
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'current-weather-widget'
+import {WeatherCard} from 'current-weather-widget'
 import 'current-weather-widget/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return (
+      <WeatherCard
+        location='Erzincan'
+        tempType='metric'
+        apiKey='226f8b19fdce6422e159452d02cf9240'
+        lang='en'
+        width='180px'
+      />
+    )
   }
 }
 ```
